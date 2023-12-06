@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/instant_loan.dart';
+import 'package:lone/loan_accounts2.dart';
+import 'package:lone/profile.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+
+import 'loan_accounts.dart';
 
 class cibil2 extends StatefulWidget{
   @override
@@ -14,13 +19,24 @@ class _cibil2State extends State<cibil2> {
   void _onItemTapped(int index) {
     // Handle item selection here, e.g., navigate to different screens.
     // In this example, we just update the selected index.
-    _selectedIndex = index;
+
+    setState(() {
+      _selectedIndex=index;
+      if(_selectedIndex ==0){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
+      }else if(_selectedIndex ==1){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>loan_accounts2()));
+      }else if(_selectedIndex ==2){
+        // Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
+      }
+    });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(context),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Color(0xFF343B44),
         leadingWidth: 25,
         elevation: 0,
@@ -188,24 +204,29 @@ class _cibil2State extends State<cibil2> {
                          ),),
                        ),
 
-                     Row(
-                       children: [
-                         Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                           child: Text('Active Loans',
-                           style: TextStyle(
-                             color: Colors.white,
-                             fontSize: 14,
-                           ),),
-                         ),
-                       Spacer(),
-                       Text('5',
-                       style: TextStyle(
-                         fontSize: 14,
-                         color: Colors.white
-                       ),),
-                       Icon(Icons.keyboard_arrow_right_outlined,
-                       color: Colors.white,)],
+                     GestureDetector(
+                       onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>loan_accounts()));
+                       },
+                       child: Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                             child: Text('Active Loans',
+                             style: TextStyle(
+                               color: Colors.white,
+                               fontSize: 14,
+                             ),),
+                           ),
+                         Spacer(),
+                         Text('5',
+                         style: TextStyle(
+                           fontSize: 14,
+                           color: Colors.white
+                         ),),
+                         Icon(Icons.keyboard_arrow_right_outlined,
+                         color: Colors.white,)],
+                       ),
                      ),
                      Divider(
                        color: Colors.grey,
@@ -307,120 +328,117 @@ class _cibil2State extends State<cibil2> {
 
 Widget MyDrawer (BuildContext context){
     return Drawer(
-      backgroundColor: Color(0xFF101218),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-             Row(
-               children: [
-                 Container(
-                   padding: const EdgeInsets.symmetric(vertical: 50.0,horizontal: 20),
-                   child: CircleAvatar(
-                     radius: 40,
-                     backgroundImage: AssetImage('assets/avatar.png',), // Replace with your avatar image
-                   ),
-                 ),
-                 Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Text('Welcome,  Aneesh',style: TextStyle(
-                       color: Colors.white
-                   ),),
-                 ),
-               ],
+        backgroundColor: Color(0xFF101218),
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+         Row(
+           children: [
+             Container(
+               padding: const EdgeInsets.symmetric(vertical: 50.0,horizontal: 20),
+               child: CircleAvatar(
+                 radius: 40,
+                 backgroundImage: AssetImage('assets/avatar.png',), // Replace with your avatar image
+               ),
              ),
-            ListTile(
-              leading: Icon(Icons.person_outline_rounded,color: Colors.white,),
-              title: Text('My Profile',style: TextStyle(
-                color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the home tap action
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.clean_hands_rounded,color: Colors.white,),
-              title: Text('My Loans',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the settings tap action
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.public_rounded,color: Colors.white,),
-              title: Text('Choose Language',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.calculate,color: Colors.white,),
-              title: Text('EMI Calculator',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-            SizedBox(height: 50,),
-
-            ListTile(
-              title: Text('Latest Updates',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-
-            ListTile(
-              title: Text('Privacy Policy',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-
-            ListTile(
-              title: Text('Rate Us',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-
-            ListTile(
-              title: Text('Share',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-
-            ListTile(
-              leading: Icon(Icons.exit_to_app,color: Colors.white,),
-              title: Text('Logout',style: TextStyle(
-                  color: Colors.white
-              ),),
-              onTap: () {
-                // Handle the logout tap action
-                Navigator.pop(context);
-              },
-            ),
-          ],
+             Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: Text('Welcome,  Aneesh',style: TextStyle(
+                   color: Colors.white
+               ),),
+             ),
+           ],
+         ),
+        ListTile(
+          leading: Icon(Icons.person_outline_rounded,color: Colors.white,),
+          title: Text('My Profile',style: TextStyle(
+            color: Colors.white
+          ),),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>profile()));
+          },
         ),
-      );
+        ListTile(
+          leading: Icon(Icons.clean_hands_rounded,color: Colors.white,),
+          title: Text('My Loans',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>loan_accounts2()));
+            },
+        ),
+        ListTile(
+          leading: Icon(Icons.public_rounded,color: Colors.white,),
+          title: Text('Choose Language',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.calculate,color: Colors.white,),
+          title: Text('EMI Calculator',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            // Handle the logout tap action
+            Navigator.pop(context);
+          },
+        ),
+        SizedBox(height: 50,),
+
+        ListTile(
+          title: Text('Latest Updates',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            // Handle the logout tap action
+            Navigator.pop(context);
+          },
+        ),
+
+        ListTile(
+          title: Text('Privacy Policy',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            // Handle the logout tap action
+            Navigator.pop(context);
+          },
+        ),
+
+        ListTile(
+          title: Text('Rate Us',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            // Handle the logout tap action
+            Navigator.pop(context);
+          },
+        ),
+
+        ListTile(
+          title: Text('Share',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            // Handle the logout tap action
+            Navigator.pop(context);
+          },
+        ),
+
+        ListTile(
+          leading: Icon(Icons.exit_to_app,color: Colors.white,),
+          title: Text('Logout',style: TextStyle(
+              color: Colors.white
+          ),),
+          onTap: () {
+            // Handle the logout tap action
+            Navigator.pop(context);
+          },
+        ),
+      ],
+    ),
+        );
   }

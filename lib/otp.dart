@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/OTPScreen.dart';
 
 class Otp extends StatefulWidget{
   @override
@@ -59,7 +60,9 @@ class _OtpState extends State<Otp> {
                   height: 110,
                   width: MediaQuery.of(context).size.width-40,
                   padding: const EdgeInsets.only(top:50.0),
-                  child: ElevatedButton(onPressed: () {  },
+                  child: ElevatedButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+                  },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.black), // Button color
                     ),
@@ -84,7 +87,9 @@ class _OtpState extends State<Otp> {
                   height: 80,
                   width: MediaQuery.of(context).size.width-40,
                   padding: EdgeInsets.only(top:30.0),
-                  child: ElevatedButton(onPressed:() {},
+                  child: ElevatedButton(onPressed:() {
+
+                  },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(

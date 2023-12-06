@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'cibil2.dart';
+
 class GetCIBIL extends StatefulWidget {
   @override
   State<GetCIBIL> createState() => _GetCIBILState();
@@ -128,7 +130,7 @@ class _GetCIBILState extends State<GetCIBIL> {
                   height: 45,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Add your button's action here
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
                     },
                     child: Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
