@@ -27,7 +27,9 @@ class _profileState extends State<profile> {
       elevation: 0,
       title: Text('My Profile',
         style: TextStyle(
-            fontSize: 17,
+            fontSize: 19,
+            fontWeight: FontWeight.bold,
+            fontFamily:'Cirka',
             color: Colors.white
         ),),
     ),
@@ -77,9 +79,9 @@ class _profileState extends State<profile> {
                   hintText: 'Ashneer Chowdary',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
-                    onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  // suffixIcon: IconButton(
+                  //   onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
+                  // ),
                   suffixIconColor:Colors.white, // Background color
                 ),
               ),
@@ -113,9 +115,9 @@ class _profileState extends State<profile> {
                   hintText: 'ashneerchowdary@gmail.com',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
+                 /* suffixIcon: IconButton(
                     onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  ),*/
                   suffixIconColor:Colors.white, // Background color
                 ),
               ),
@@ -149,9 +151,9 @@ class _profileState extends State<profile> {
                   hintText: '+91 0123456789',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
+                  /*suffixIcon: IconButton(
                     onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  ),*/
                   suffixIconColor:Colors.white,
                   border: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -190,9 +192,9 @@ class _profileState extends State<profile> {
                   hintText: '01 Jan 2000',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
+                 /* suffixIcon: IconButton(
                     onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  ),*/
                   suffixIconColor:Colors.white, // Background color
                 ),
               ),
@@ -225,9 +227,9 @@ class _profileState extends State<profile> {
                   hintText: 'Male',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
+                  /*suffixIcon: IconButton(
                     onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  ),*/
                   suffixIconColor:Colors.white, // Background color
                 ),
               ),
@@ -260,9 +262,9 @@ class _profileState extends State<profile> {
                   hintText: 'ABCD1234N',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
+                  /*suffixIcon: IconButton(
                     onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  ),*/
                   suffixIconColor:Colors.white,
                   // Background color
                 ),
@@ -297,9 +299,9 @@ class _profileState extends State<profile> {
                   hintText: '1234-5678-9012-3456',
                   filled: true,
                   fillColor: Colors.transparent,
-                  suffixIcon: IconButton(
+                  /*suffixIcon: IconButton(
                     onPressed: () {  }, icon: Icon(Icons.mode_edit_outlined),
-                  ),
+                  ),*/
                   suffixIconColor:Colors.white,
                   // Background color
                 ),

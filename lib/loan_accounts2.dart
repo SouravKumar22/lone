@@ -17,7 +17,9 @@ class _loan_accounts2State extends State<loan_accounts2> {
     elevation: 0,
     title: Text('Loan Accounts',
     style: TextStyle(
-    fontSize: 17,
+    fontSize: 19,
+        fontFamily:'Cirka',
+    fontWeight: FontWeight.bold,
     color: Colors.white
     ),),
     ),
@@ -45,6 +47,9 @@ class _loan_accounts2State extends State<loan_accounts2> {
                           minimumSize: Size(150, 50), // Set the button's minimum size
                         ),
                         child: Text('Active Loans (5)',style: TextStyle(
+                            fontFamily:'Cirka',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 19,
                           color: Colors.black
                         ),)),
                   ),
@@ -58,14 +63,21 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         elevation: 4, // Set the elevation (shadow)
                         minimumSize: Size(150, 50), // Set the button's minimum size
                       ),
-                      child: Text('Cleared Loans (0)')),
+                      child: Text('Cleared Loans (0)',
+                      style: TextStyle(
+                        fontFamily:'Cirka',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 19,
+                      ),)),
 
                 ],),
             ),
             Padding(
               padding: const EdgeInsets.only(left:10.0),
               child: Text('Updated on 29 Nov 2023',style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 16.0,
+                  fontFamily:'Cirka',
+                  fontWeight: FontWeight.bold,
                   color: Color(0xFFF3F3F3)
               ),),
             ),
@@ -96,12 +108,21 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         children: <Widget>[
                           Text(
                             'Loan Type',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white),
                           ),
                           Spacer(), // Add space between the Text widgets
                           Text(
                             'Housing Loan 1',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                         ],
                       ),
@@ -113,12 +134,22 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         children: <Widget>[
                           Text(
                             'Loan Amount',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                           Spacer(), // Add space between the Text widgets
                           Text(
                             '₹ 50,00,000',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                         ],
                       ),
@@ -130,12 +161,22 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         children: <Widget>[
                           Text(
                             'EMI',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                           Spacer(), // Add space between the Text widgets
                           Text(
                             '₹ 50,173',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                         ],
                       ),
@@ -147,12 +188,22 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         children: <Widget>[
                           Text(
                             'Interest Rate',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                           Spacer(), // Add space between the Text widgets
                           Text(
                             '21%',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                         ],
                       ),
@@ -164,12 +215,22 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         children: <Widget>[
                           Text(
                             'Loan Tenure',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                           Spacer(), // Add space between the Text widgets
                           Text(
                             '180 months',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                         ],
                       ),
@@ -181,12 +242,22 @@ class _loan_accounts2State extends State<loan_accounts2> {
                         children: <Widget>[
                           Text(
                             'ROI',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                           Spacer(), // Add space between the Text widgets
                           Text(
                             'TBC',
-                            style: TextStyle(fontSize: 12.0,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: 14.0,
+                                // fontWeight: FontWeight.bold,
+                                // fontFamily:'Cirka',
+                                color: Colors.white
+                            ),
                           ),
                         ],
                       ),

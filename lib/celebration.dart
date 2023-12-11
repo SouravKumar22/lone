@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lone/Dob.dart';
+import 'package:lone/cibil2.dart';
+
+import 'newscreen.dart';
 
 class Celebration extends StatefulWidget {
   @override
@@ -15,119 +18,108 @@ class _CelebrationState extends State<Celebration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            body: Container(
-              alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(18.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(50.0),
-                      child: Image.asset("assets/celebration.jpg",scale: 2.5,),
-                    ),
-                    Text("Congratulations! John for successful login at 1Lone",
-                      textAlign: TextAlign.center,
-                      style:TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25.0, // Adjust the font size as needed
-                        color: Colors.black, // Adjust the color as needed
-                      ),),
-                    SizedBox(height: 60.0),
-                    Text("Now you can save up to 45% on your current EMI i.e. from ₹1,00,000 to ₹55,000",
-                      textAlign: TextAlign.center,
-                      style:TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 20.0, // Adjust the font size as needed
-                        color: Colors.black, // Adjust the color as needed
-                      ),),
-                    SizedBox(height: 20,),
-                    Text("Link to Below Calculation",
-                      textAlign: TextAlign.center,
-                      style:TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15.0, // Adjust the font size as needed
-                        color: Colors.black, // Adjust the color as needed
-                      ),),
-                    SizedBox(height: 50.0),
-                    Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Get Credit Score for ",
-                          textAlign: TextAlign.center,
-                          style:TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16.0, // Adjust the font size as needed
-                            color: Colors.black, // Adjust the color as needed
-                          ),),
-                        Text("FREE!",
-                          textAlign: TextAlign.center,
-                          style:TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16.0, // Adjust the font size as needed
-                            color: Colors.green, // Adjust the color as needed
-                          ),),
-                      ],
-                    ),
 
-                    SizedBox(height: 25.0),
-                    Row(mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Checkbox(side: MaterialStateBorderSide.resolveWith(
-                              (states) => BorderSide(width: 1.5, color: Colors.black),
-                        ),
-                            activeColor: Colors.white,
-                            checkColor: Colors.black,
-                            shape: CircleBorder(),
-                            value: agree,
-                            onChanged: (val){
-                              setState(() {
-                                agree=!agree;
-                              });
-                            }
-                        ),
-                        Container(width: MediaQuery.of(context).size.width-120,
-                          child: Text("I hereby appoint 1Lone as my authorized representative to receive my credit information from bureau",
-                            textAlign: TextAlign.start,
-                            textDirection: TextDirection.ltr,
-                            style:TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16.0, // Adjust the font size as needed
-                              color: Colors.black, // Adjust the color as needed
-                            ),),
-                        ),
-                      ],
-                    ),
-
-                    SizedBox(height: 10.0),
-                    Container(
-                      margin: EdgeInsets.only(top: 70,left: 10,right: 10),
-                      width: MediaQuery.of(context).size.width-40,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Dob()));
-                        },
-                        child: Text('Continue',style: TextStyle(color: Colors.white),),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.black), // Button color
-                          side: MaterialStateProperty.all(
-                            BorderSide(
-                              color: Colors.white, // White border color
-                              width: 0.5, // Adjust the border width as needed
-                            ),
-                          ),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
-                            ),
-                          ),
-                        ),
+      backgroundColor: Colors.black,
+            body: SingleChildScrollView(
+              child: Stack(/*ClipPath(
+                    clipper: DrawClip(),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height *0.7,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF170151), Color(0xFF000000)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight),
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  ),*/
+                children: [
+
+                  Container(
+                    alignment: Alignment.topCenter,
+                    padding: const EdgeInsets.all(18.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 30,),
+                        Image.asset("assets/logo.png",scale: 2,),
+                        SizedBox(height: 10,),
+                        Padding(
+                          padding: const EdgeInsets.all(50.0),
+                          child: Image.asset("assets/celebration.png",scale: 8,),
+                        ),
+                        SizedBox(height: 50.0),
+                        Text("Welcome to 1Lone - Where Your Finances Unite!",
+                          textAlign: TextAlign.center,
+                          style:TextStyle(
+                            letterSpacing: 1,
+                            fontFamily:'Cirka',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0, // Adjust the font size as needed
+                            color: Colors.white, // Adjust the color as needed
+                          ),),
+                        SizedBox(height: 80.0),
+
+                        Row(mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Checkbox(side: MaterialStateBorderSide.resolveWith(
+                                  (states) => BorderSide(width: 1.5, color: Colors.white),
+                            ),
+                                activeColor: Colors.white,
+                                checkColor: Colors.black,
+                                value: agree,
+                                onChanged: (val){
+                                  setState(() {
+                                    agree=!agree;
+                                  });
+                                }
+                            ),
+                            Container(width: MediaQuery.of(context).size.width-120,
+                              child: Text("I hereby appoint 1Lone as my authorized representative to receive my credit information from bureau",
+                                textAlign: TextAlign.start,
+                                textDirection: TextDirection.ltr,
+                                style:TextStyle(
+                                  //fontFamily:'Cirka',
+                                  fontSize: 17.0, // Adjust the font size as needed
+                                  color: Colors.grey, // Adjust the color as needed
+                                ),),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 50,left: 10,right: 10),
+                          width: MediaQuery.of(context).size.width-40,
+                          height: 50,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
+                            },
+                            child: Text('Get Credit Score for FREE!',style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
+                              side: MaterialStateProperty.all(
+                                BorderSide(
+                                  color: Colors.black, // White border color
+                                  width: 0.5, // Adjust the border width as needed
+                                ),
+                              ),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
         );

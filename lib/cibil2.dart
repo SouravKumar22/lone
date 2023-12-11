@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lone/instant_loan.dart';
+import 'package:lone/loanOffers.dart';
 import 'package:lone/loan_accounts2.dart';
 import 'package:lone/profile.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import 'loan_accounts.dart';
+import 'otp.dart';
 
 class cibil2 extends StatefulWidget{
   @override
@@ -40,8 +42,8 @@ class _cibil2State extends State<cibil2> {
         backgroundColor: Color(0xFF343B44),
         leadingWidth: 25,
         elevation: 0,
-        title: Image.asset('assets/splash.png',
-        scale: 5,),
+        title: Image.asset('assets/logo.png',
+        scale: 3,),
       ),
         body:Container(
           height: MediaQuery.of(context).size.height,
@@ -52,8 +54,7 @@ class _cibil2State extends State<cibil2> {
                 end: Alignment.bottomCenter,
                 colors: [
                   Color(0xFF101218),
-                  Color(0xFF525861),
-                  Colors.grey
+                  Color(0xFF343B44)
                 ],
               )),
           child: SingleChildScrollView(
@@ -72,14 +73,20 @@ class _cibil2State extends State<cibil2> {
                     ),
                   ),
 
-                child: Text('Your Cibil Report', style: TextStyle(color:
-                Colors.white,fontSize: 30),
+                child: Text('Your Credit Report', style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 26,
+                  fontFamily:'Cirka',),
                 ),),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0,left: 20.0),
                 child: Text('CIBIL Score',style: TextStyle(
+                  letterSpacing: 0.5,
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 18,
+                    fontFamily:'Cirka',
                   fontWeight: FontWeight.bold
                 ),),
               ),
@@ -90,14 +97,7 @@ class _cibil2State extends State<cibil2> {
                   width: MediaQuery.of(context).size.width-10,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFF101218),
-                          Color(0xFF343B44),
-                        ],
-                      )),
+                      color: Colors.grey),
                 child: Stack(
                   children: [
                     SfRadialGauge(axes: <RadialAxis>[
@@ -118,7 +118,7 @@ class _cibil2State extends State<cibil2> {
                               value: progressValue,
                               cornerStyle: CornerStyle.bothCurve,
                               width: 0.12,
-                              color: Colors.green,
+                              color: Colors.indigo,
                               sizeUnit: GaugeSizeUnit.factor,
                               )
                           ],
@@ -128,15 +128,16 @@ class _cibil2State extends State<cibil2> {
                               angle: 90,
                               widget: Text(
                                   progressValue.toStringAsFixed(0),
-                                  style: TextStyle(fontSize:40,
+                                  style: TextStyle(fontSize:42,
+                                      fontFamily:'Cirka',
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                  color: Color(0xFF001FA1)),
                                   ))
                         ])
                       ]),
                   Positioned(
-                    bottom: 5,
-                    left: MediaQuery.of(context).size.width/3-15,
+                    bottom: 50,
+                    left: MediaQuery.of(context).size.width/2-40,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -146,28 +147,27 @@ class _cibil2State extends State<cibil2> {
                             'Good',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF001FA1),
+                               fontWeight: FontWeight.bold,
+                              //   fontFamily:'Cirka',
                               fontSize: 18
                             ),
                           ),
                         ),
-                        Image.asset('assets/cibil.png',
-                        width: 61,
-                        height: 25,),
 
-                        Padding(
+                        /*Padding(
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Text(
                             'Updated on 29 Nov 2023',
                             style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
+                              color: Colors.black,
+                              // fontWeight: FontWeight.bold,
                               fontSize: 12,
+                              // fontFamily:'Cirka',
                               letterSpacing: 0, // Negative letter spacing for thin font
                             ),
                           ),
-                        ),
+                        ),*/
                       ],
                     ),
                   )],
@@ -175,20 +175,12 @@ class _cibil2State extends State<cibil2> {
                     )
               ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0,left: 20.0),
-                  child: Text('CIBIL Report Summary',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold
-                  ),),
-                ),
-                Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 20),
                       width: MediaQuery.of(context).size.width-10,
                       decoration: const BoxDecoration(
-                        color: Color(0xFF343B44),
+                        color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
 
@@ -199,8 +191,10 @@ class _cibil2State extends State<cibil2> {
                          padding: const EdgeInsets.all(10.0),
                          child: Text('Summary',
                          style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 18,
+                           color: Color(0xFF001FA1),
+                           fontSize: 20,
+                           fontFamily:'Cirka',
+                           fontWeight: FontWeight.bold,
                          ),),
                        ),
 
@@ -214,18 +208,22 @@ class _cibil2State extends State<cibil2> {
                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                              child: Text('Active Loans',
                              style: TextStyle(
-                               color: Colors.white,
+                               color: Colors.black,
                                fontSize: 14,
+                               // fontFamily:'Cirka',
+                               // fontWeight: FontWeight.bold,
                              ),),
                            ),
                          Spacer(),
                          Text('5',
                          style: TextStyle(
                            fontSize: 14,
-                           color: Colors.white
+                           color: Colors.black,
+                           // fontWeight: FontWeight.bold,
+                           // fontFamily:'Cirka',
                          ),),
                          Icon(Icons.keyboard_arrow_right_outlined,
-                         color: Colors.white,)],
+                         color: Colors.black,)],
                        ),
                      ),
                      Divider(
@@ -237,15 +235,19 @@ class _cibil2State extends State<cibil2> {
                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                              child: Text('Total Loan',
                                style: TextStyle(
-                                 color: Colors.white,
+                                 color: Colors.black,
                                  fontSize: 14,
+                                 // fontWeight: FontWeight.bold,
+                                 // fontFamily:'Cirka',
                                ),),
                            ),
                            Spacer(),
                            Text('₹8,80,000  ',
                              style: TextStyle(
                                  fontSize: 14,
-                                 color: Colors.white
+                                 // fontFamily:'Cirka',
+                                 // fontWeight: FontWeight.bold,
+                                 color: Colors.black
                              ),),
                            ],
                        ),
@@ -258,15 +260,19 @@ class _cibil2State extends State<cibil2> {
                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                              child: Text('Age of Accounts',
                                style: TextStyle(
-                                 color: Colors.white,
+                                 color: Colors.black,
+                                 // fontFamily:'Cirka',
                                  fontSize: 14,
+                                 // fontWeight: FontWeight.bold,
                                ),),
                            ),
                            Spacer(),
                            Text('5 years  ',
                              style: TextStyle(
                                  fontSize: 14,
-                                 color: Colors.white
+                                 // fontFamily:'Cirka',
+                                 // fontWeight: FontWeight.bold,
+                                 color: Colors.black
                              ),),
                            ],
                        ),
@@ -279,22 +285,60 @@ class _cibil2State extends State<cibil2> {
                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                              child: Text('Recent Enquires',
                                style: TextStyle(
-                                 color: Colors.white,
+                                 color: Colors.black,
+                                 // fontWeight: FontWeight.bold,
+                                 // fontFamily:'Cirka',
                                  fontSize: 14,
                                ),),
                            ),
                            Spacer(),
                            Text('2 months',
                              style: TextStyle(
+                                 // fontFamily:'Cirka',
                                  fontSize: 14,
                                  color: Colors.white
                              ),),
                            Icon(Icons.keyboard_arrow_right_outlined,
-                             color: Colors.white,)],
+                             color: Colors.black,)],
                        ),
                        ],
                    ),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text("Now you can save up to 45% on your current EMI i.e. from ₹1,00,000 to ₹55,000",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    //fontFamily:'Cirka',
+                    fontSize: 18,
+                    //fontWeight: FontWeight.bold,
+                  ),),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 65,
+                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(10.0),
+                  child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoanOffers()));
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0), // Adjust the radius as needed
+                          ),
+                        ),),
+                      child:  const Row(mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('APPLY FOR LOAN  ',style: TextStyle(fontSize: 16.0,color: Color(0xFF001FA1) ),),
+                          Icon(Icons.arrow_forward_rounded,size: 20,
+                            color: Color(0xFF001FA1),)
+                        ],
+                      )),
                 ),
               ],
             ),
@@ -317,6 +361,18 @@ class _cibil2State extends State<cibil2> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        unselectedLabelStyle: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            fontFamily:'Cirka',
+            color: Colors.white,
+        ),
+        selectedLabelStyle: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            fontFamily:'Cirka',
+            color: Colors.white
+        ),
         backgroundColor: Color(0xFF1E2331), // Background color of the navigation bar
         selectedItemColor: Colors.white, // Item color when selected
         unselectedItemColor: Colors.white.withOpacity(0.6), // Item color when unselected
@@ -328,30 +384,35 @@ class _cibil2State extends State<cibil2> {
 
 Widget MyDrawer (BuildContext context){
     return Drawer(
-        backgroundColor: Color(0xFF101218),
+        backgroundColor: Color(0xFF343B44),
     child: ListView(
       padding: EdgeInsets.zero,
       children: [
-         Row(
+         Column(
            children: [
-             Container(
-               padding: const EdgeInsets.symmetric(vertical: 50.0,horizontal: 20),
-               child: CircleAvatar(
-                 radius: 40,
-                 backgroundImage: AssetImage('assets/avatar.png',), // Replace with your avatar image
-               ),
-             ),
              Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: Text('Welcome,  Aneesh',style: TextStyle(
-                   color: Colors.white
-               ),),
+               padding: const EdgeInsets.only(top: 50.0),
+               child: Image.asset('assets/logo.png', scale: 2,),
+             ),
+             Row(
+               children: [
+                 Padding(
+                   padding: const EdgeInsets.only(top: 50.0, left: 30, bottom: 30),
+                   child: Text('Welcome,  Aneesh',style: TextStyle(
+                       // fontFamily:'Cirka',
+                       // fontWeight: FontWeight.bold,
+                       color: Colors.white
+                   ),),
+                 ),
+               ],
              ),
            ],
          ),
         ListTile(
           leading: Icon(Icons.person_outline_rounded,color: Colors.white,),
           title: Text('My Profile',style: TextStyle(
+              // fontFamily:'Cirka',
+              // fontWeight: FontWeight.bold,
             color: Colors.white
           ),),
           onTap: () {
@@ -361,6 +422,8 @@ Widget MyDrawer (BuildContext context){
         ListTile(
           leading: Icon(Icons.clean_hands_rounded,color: Colors.white,),
           title: Text('My Loans',style: TextStyle(
+            // fontWeight: FontWeight.bold,
+            //   fontFamily:'Cirka',
               color: Colors.white
           ),),
           onTap: () {
@@ -368,17 +431,10 @@ Widget MyDrawer (BuildContext context){
             },
         ),
         ListTile(
-          leading: Icon(Icons.public_rounded,color: Colors.white,),
-          title: Text('Choose Language',style: TextStyle(
-              color: Colors.white
-          ),),
-          onTap: () {
-
-          },
-        ),
-        ListTile(
           leading: Icon(Icons.calculate,color: Colors.white,),
           title: Text('EMI Calculator',style: TextStyle(
+            // fontWeight: FontWeight.bold,
+            //   fontFamily:'Cirka',
               color: Colors.white
           ),),
           onTap: () {
@@ -388,28 +444,35 @@ Widget MyDrawer (BuildContext context){
         ),
         SizedBox(height: 50,),
 
-        ListTile(
+        /*ListTile(
           title: Text('Latest Updates',style: TextStyle(
+            fontWeight: FontWeight.bold,
+              fontFamily:'Cirka',
               color: Colors.white
           ),),
           onTap: () {
             // Handle the logout tap action
             Navigator.pop(context);
           },
-        ),
+        ),*/
 
-        ListTile(
+        /*ListTile(
           title: Text('Privacy Policy',style: TextStyle(
+              fontFamily:'Cirka',
+              fontWeight: FontWeight.bold,
               color: Colors.white
           ),),
           onTap: () {
             // Handle the logout tap action
             Navigator.pop(context);
           },
-        ),
+        ),*/
 
         ListTile(
+          leading: Icon(Icons.star_rate_outlined,color: Colors.white,),
           title: Text('Rate Us',style: TextStyle(
+              // fontFamily:'Cirka',
+              // fontWeight: FontWeight.bold,
               color: Colors.white
           ),),
           onTap: () {
@@ -419,7 +482,10 @@ Widget MyDrawer (BuildContext context){
         ),
 
         ListTile(
+          leading: Icon(Icons.share_outlined,color: Colors.white,),
           title: Text('Share',style: TextStyle(
+              // fontFamily:'Cirka',
+              // fontWeight: FontWeight.bold,
               color: Colors.white
           ),),
           onTap: () {
@@ -431,11 +497,13 @@ Widget MyDrawer (BuildContext context){
         ListTile(
           leading: Icon(Icons.exit_to_app,color: Colors.white,),
           title: Text('Logout',style: TextStyle(
+              // fontFamily:'Cirka',
+              // fontWeight: FontWeight.bold,
               color: Colors.white
           ),),
           onTap: () {
             // Handle the logout tap action
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Otp()));
           },
         ),
       ],

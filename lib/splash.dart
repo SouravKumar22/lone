@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/application1.dart';
 import 'package:lone/instant_loan.dart';
 
 import 'otp.dart';
@@ -17,10 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3),
-            ()=>Navigator.pushReplacement(context,
+            ()=>Navigator.push(context,
             MaterialPageRoute(builder:
                 (context) =>
-                InstantLoan()
+                Application1()
             )
         )
     );
@@ -31,16 +32,10 @@ class _SplashScreenState extends State<SplashScreen> {
     return Container(
       alignment: Alignment.center,
         decoration: const BoxDecoration(
-        gradient: LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Color(0xFF101218),
-          Color(0xFF525861),
-          Colors.grey
-        ],
-    )),
-            child: Image.asset('assets/splash.png'),
+          color: Colors.black,
+
+    ),
+            child: Image.asset('assets/logo.png'),
     );
   }
 }

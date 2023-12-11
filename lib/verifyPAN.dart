@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/cibil.dart';
 import 'package:lone/pincode.dart';
 
 class VerifyPan extends StatelessWidget {@override
@@ -23,8 +24,10 @@ class VerifyPan extends StatelessWidget {@override
                   children: [
                     SizedBox(height: 70.0),
                     Text("Verify your PAN Card",style:TextStyle(
+                      letterSpacing: 1,
+                      fontFamily:'Cirka',
                       fontWeight: FontWeight.bold,
-                      fontSize: 22.0, // Adjust the font size as needed
+                      fontSize: 24.0, // Adjust the font size as needed
                       color: Colors.white, // Adjust the color as needed
                     ),),
                     SizedBox(height: 60.0),
@@ -70,15 +73,17 @@ class VerifyPan extends StatelessWidget {@override
                                   style: TextStyle(
                                       fontSize: 15,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w500
+                                      //fontFamily:'Cirka',
+                                      fontWeight: FontWeight.bold
                                   ),
                                 ),
                                 SizedBox(height: 10,),
                                 Text('Upload photo/PDF of original PAN card.',
                                   style: TextStyle(
                                       fontSize: 14,
+                                      //fontFamily:'Cirka',
                                       color: Colors.white,
-                                      fontWeight: FontWeight.normal
+                                      fontWeight: FontWeight.bold
                                   ),
                                 ),
                               ],
@@ -93,9 +98,11 @@ class VerifyPan extends StatelessWidget {@override
                         Image.asset("assets/security.png",scale: 3,),
                         Text('  Your data is fully secured with us.',
                           style: TextStyle(
+                            letterSpacing: 0.5,
                               fontSize: 15,
                               color: Colors.white,
-                              fontWeight: FontWeight.normal
+                              fontWeight: FontWeight.bold,
+                            //fontFamily:'Cirka',
                           ),
                         ),
                       ],
@@ -103,12 +110,14 @@ class VerifyPan extends StatelessWidget {@override
                     Container(
                       margin: EdgeInsets.only(top: 50,left: 10,right: 10),
                       width: MediaQuery.of(context).size.width-40,
-                      height: 50,
+                      height: 55,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Pincode()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>GetCIBIL()));
                         },
-                        child: Text('Continue',style: TextStyle(color: Colors.white),),
+                        child: Text('Continue',style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white),),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(Colors.black), // Button color
                           side: MaterialStateProperty.all(

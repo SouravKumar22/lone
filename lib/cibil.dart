@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lone/celebration.dart';
 
 import 'cibil2.dart';
 
@@ -18,29 +19,38 @@ class _GetCIBILState extends State<GetCIBIL> {
         body: Container(
           alignment: Alignment.topCenter,
           padding: const EdgeInsets.all(18.0),
+          decoration: BoxDecoration(
+            color: Colors.black,
+          ),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 50,),
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Image.asset("assets/cibil.jpg",scale: 3,),
-                ),
+                Image.asset("assets/logo.png",scale: 2,),
+                SizedBox(height: 60,),
+                /*Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Image.asset("assets/cibil1.png",scale: 5,),
+                ),*/
                 Text("You are one step away to get your CIBIL Report",
                   textAlign: TextAlign.center,
                   style:TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16.0, // Adjust the font size as needed
-                    color: Colors.black, // Adjust the color as needed
+                    letterSpacing: 0.5,
+                    fontFamily:'Cirka',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0, // Adjust the font size as needed
+                    color: Colors.grey, // Adjust the color as needed
                   ),),
                 SizedBox(height: 20,),
                 Text("Enter your Email ID",
                   textAlign: TextAlign.center,
                   style:TextStyle(
+                    letterSpacing: 1,
+                    fontFamily:'Cirka',
                     fontWeight: FontWeight.bold,
-                    fontSize: 25.0, // Adjust the font size as needed
-                    color: Colors.black, // Adjust the color as needed
+                    fontSize: 27.0, // Adjust the font size as needed
+                    color: Colors.white, // Adjust the color as needed
                   ),),
                 SizedBox(height: 40.0),
                 Padding(
@@ -56,6 +66,7 @@ class _GetCIBILState extends State<GetCIBIL> {
                         borderRadius: BorderRadius.circular(15.0),
                       ),
                       hintText: 'johnkevin@gmail.com',
+                      hintStyle: TextStyle(fontWeight: FontWeight.bold),
                       filled: true,
                       fillColor: Colors.white, // Background color
                       border: OutlineInputBorder(
@@ -71,16 +82,17 @@ class _GetCIBILState extends State<GetCIBIL> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Add your button's action here
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Celebration()));
                     },
-                    child: Text('CIBIL REPORT',style:TextStyle(
-                      fontWeight: FontWeight.w500,
+                    child: Text('GET NOW',style:TextStyle(
+                      fontWeight: FontWeight.bold,
+                      // fontFamily:'Cirka',
                       letterSpacing: 1,
-                      fontSize: 18.0, // Adjust the font size as needed
+                      fontSize: 20.0, // Adjust the font size as needed
                       color: Colors.white, // Adjust the color as needed
                     ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color(0xFF129661)), // Button color
+                      backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
@@ -98,8 +110,8 @@ class _GetCIBILState extends State<GetCIBIL> {
                           (states) => BorderSide(width: 1.5, color: Colors.black),
                     ),
                         activeColor: Colors.white,
+
                         checkColor: Colors.black,
-                        shape: CircleBorder(),
                         value: agree,
                         onChanged: (val){
                           setState(() {
@@ -110,41 +122,41 @@ class _GetCIBILState extends State<GetCIBIL> {
                     Text("I agree to the ",
                       textAlign: TextAlign.center,
                       style:TextStyle(
-                        fontWeight: FontWeight.normal,
+                        letterSpacing: 0.5,
+                        // fontFamily:'Cirka',
+                        fontWeight: FontWeight.bold,
                         fontSize: 16.0, // Adjust the font size as needed
-                        color: Colors.black, // Adjust the color as needed
+                        color: Colors.white, // Adjust the color as needed
                       ),),
                     Text("Terms & Conditions",
                       textAlign: TextAlign.center,
                       style:TextStyle(
+                        letterSpacing: 0.5,
                         decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.normal,
+                        // fontFamily:'Cirka',
+                        fontWeight: FontWeight.bold,
                         fontSize: 16.0, // Adjust the font size as needed
-                        color: Colors.black, // Adjust the color as needed
+                        color: Colors.white, // Adjust the color as needed
                       ),),
                   ],
                 ),
-                Container(
+                /*Container(
                   margin: EdgeInsets.only(top: 40,left: 10,right: 10),
                   width: MediaQuery.of(context).size.width-40,
                   height: 45,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Celebration()));
                     },
-                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Get Now ',style:TextStyle(
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1,
-                          fontSize: 18.0, // Adjust the font size as needed
-                          color: Colors.white, // Adjust the color as needed
-                        ),),
-                        Icon(Icons.arrow_forward_rounded)
-                      ],
-                    ),
+                    child: Text('Get Now ',style:TextStyle(
+                      fontWeight: FontWeight.bold,
+                      // fontFamily:'Cirka',
+                      letterSpacing: 1,
+                      fontSize: 20.0, // Adjust the font size as needed
+                      color: Colors.black, // Adjust the color as needed
+                    ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.black), // Button color
+                      backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
                       side: MaterialStateProperty.all(
                         BorderSide(
                           color: Colors.white, // White border color
@@ -158,7 +170,7 @@ class _GetCIBILState extends State<GetCIBIL> {
                       ),
                     ),
                   ),
-                )
+                )*/
               ],
             ),
           ),
