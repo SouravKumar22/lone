@@ -79,13 +79,13 @@ class _GetCIBILState extends State<GetCIBIL> {
                 Container(
                   margin: EdgeInsets.only(top: 15,left: 10,right: 10),
                   width: MediaQuery.of(context).size.width-40,
-                  height: 50,
+                  height: 45,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Celebration()));
                     },
                     child: Text('GET NOW',style:TextStyle(
-                      fontWeight: FontWeight.bold,
+                      //fontWeight: FontWeight.bold,
                       // fontFamily:'Cirka',
                       letterSpacing: 1,
                       fontSize: 20.0, // Adjust the font size as needed
@@ -95,7 +95,7 @@ class _GetCIBILState extends State<GetCIBIL> {
                       backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+                          borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
                         ),
                       ),
                     ),

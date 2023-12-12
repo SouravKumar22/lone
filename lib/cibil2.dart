@@ -49,14 +49,8 @@ class _cibil2State extends State<cibil2> {
           height: MediaQuery.of(context).size.height,
           // alignment: Alignment.center,
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFF101218),
-                  Color(0xFF343B44)
-                ],
-              )),
+              color: Colors.black
+          ),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +76,7 @@ class _cibil2State extends State<cibil2> {
                 ),),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0,left: 20.0),
-                child: Text('CIBIL Score',style: TextStyle(
+                child: Text('CREDIT Score',style: TextStyle(
                   letterSpacing: 0.5,
                   color: Colors.white,
                   fontSize: 18,
@@ -177,7 +171,7 @@ class _cibil2State extends State<cibil2> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 8),
                       width: MediaQuery.of(context).size.width-10,
                       decoration: const BoxDecoration(
                         color: Colors.white,
@@ -191,7 +185,7 @@ class _cibil2State extends State<cibil2> {
                          padding: const EdgeInsets.all(10.0),
                          child: Text('Summary',
                          style: TextStyle(
-                           color: Color(0xFF001FA1),
+                           color: Colors.grey,
                            fontSize: 20,
                            fontFamily:'Cirka',
                            fontWeight: FontWeight.bold,
@@ -258,32 +252,7 @@ class _cibil2State extends State<cibil2> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                             child: Text('Age of Accounts',
-                               style: TextStyle(
-                                 color: Colors.black,
-                                 // fontFamily:'Cirka',
-                                 fontSize: 14,
-                                 // fontWeight: FontWeight.bold,
-                               ),),
-                           ),
-                           Spacer(),
-                           Text('5 years  ',
-                             style: TextStyle(
-                                 fontSize: 14,
-                                 // fontFamily:'Cirka',
-                                 // fontWeight: FontWeight.bold,
-                                 color: Colors.black
-                             ),),
-                           ],
-                       ),
-                       Divider(
-                         color: Colors.grey,
-                       ),
-                       Row(
-                         children: [
-                           Padding(
-                             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                             child: Text('Recent Enquires',
+                             child: Text('Total EMI',
                                style: TextStyle(
                                  color: Colors.black,
                                  // fontWeight: FontWeight.bold,
@@ -329,12 +298,12 @@ class _cibil2State extends State<cibil2> {
                         backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0), // Adjust the radius as needed
+                            borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
                           ),
                         ),),
                       child:  const Row(mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('APPLY FOR LOAN  ',style: TextStyle(fontSize: 16.0,color: Color(0xFF001FA1) ),),
+                          Text('APPLY FOR LOAN  ',style: TextStyle(fontSize: 20.0,color: Color(0xFF001FA1) ),),
                           Icon(Icons.arrow_forward_rounded,size: 20,
                             color: Color(0xFF001FA1),)
                         ],

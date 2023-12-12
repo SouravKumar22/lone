@@ -25,7 +25,6 @@ class _DetailsState extends State<Details> {
           alignment: Alignment.topCenter,
           decoration: const BoxDecoration(
               color: Colors.black),
-
           child: SingleChildScrollView(
             child: Stack(
               children: [
@@ -140,7 +139,7 @@ class _DetailsState extends State<Details> {
                       Container(
                         margin: EdgeInsets.only(top: 70),
                         width: MediaQuery.of(context).size.width-40,
-                        height: 55,
+                        height: 45,
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>Dob()));

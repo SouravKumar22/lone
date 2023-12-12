@@ -72,7 +72,7 @@ class OtpScreen extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(top: 70,left: 10,right: 10),
                           width: MediaQuery.of(context).size.width-40,
-                          height: 55,
+                          height: 45,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Details()));

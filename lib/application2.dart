@@ -275,7 +275,7 @@ class _Application2State extends State<Application2> {
                          TextStyle(
                              fontSize: 20.0,
                              //fontFamily: 'Cirka',
-                             fontWeight: FontWeight.bold,
+                             //fontWeight: FontWeight.bold,
                              color: Color(0xFF001FA1) ),)),
                    ),
 

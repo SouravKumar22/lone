@@ -147,9 +147,7 @@ class _InstantLoanState extends State<InstantLoan> {
                   child:  const Row(mainAxisSize: MainAxisSize.min,
                     children: [
                       Text('Next',style: TextStyle(fontSize: 20.0,
-                          color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Cirka',),),
+                          color: Colors.black,),),
                       Padding(
                         padding: EdgeInsets.only(left: 8.0, top: 5),
                         child: Icon(Icons.arrow_forward_rounded,

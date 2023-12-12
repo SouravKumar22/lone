@@ -35,7 +35,6 @@ class _CelebrationState extends State<Celebration> {
                     ),
                   ),*/
                 children: [
-
                   Container(
                     alignment: Alignment.topCenter,
                     padding: const EdgeInsets.all(18.0),
@@ -91,7 +90,7 @@ class _CelebrationState extends State<Celebration> {
                         Container(
                           margin: EdgeInsets.only(top: 50,left: 10,right: 10),
                           width: MediaQuery.of(context).size.width-40,
-                          height: 50,
+                          height: 45,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
@@ -99,7 +98,9 @@ class _CelebrationState extends State<Celebration> {
                             child: Text('Get Credit Score for FREE!',style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold),),
+                                //fontWeight: FontWeight.bold
+                            )
+                              ,),
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
                               side: MaterialStateProperty.all(
