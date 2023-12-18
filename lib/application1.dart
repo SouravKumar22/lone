@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/celebration.dart';
+import 'package:lone/celebration1.dart';
 import 'package:lone/instant_loan.dart';
+import 'package:lone/instant_loan2.dart';
+import 'package:lone/loanOffers.dart';
 
 import 'application2.dart';
+import 'cibil2.dart';
 
 class Application1 extends StatefulWidget{
   @override
@@ -508,26 +513,26 @@ class _Application1State extends State<Application1> {
                         padding: const EdgeInsets.all(10.0),
                         child: ElevatedButton(
                             onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => InstantLoan()
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => LoanOffers()
                                   )
                               );
                             },
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFC5D0FF)),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF0076CE)),
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
                                 ),
                               ),),
-                            child:  Text('Next',style:
+                            child:  Text('Apply',style:
                             TextStyle(
                                 fontSize: 20.0,
                                 //fontFamily: 'Cirka',
                                 //fontWeight: FontWeight.bold,
-                                color: Color(0xFF001FA1) ),)),
+                                color: Colors.white)
+                            ),
+                        )
                       ),
-
-
                     ],
                   ),
                 ),
@@ -535,6 +540,7 @@ class _Application1State extends State<Application1> {
             ),
           ),
         ),
+      bottomNavigationBar: bottomBar(context,0),
     );
   }
 }

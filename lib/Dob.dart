@@ -133,13 +133,13 @@ class Dob extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>GetCIBIL()));
                             },
-                            child: Text('Continue',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 20),),
+                            child: Text('Continue',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 20),),
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
+                              backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
                               side: MaterialStateProperty.all(
                                 BorderSide(
                                   color: Colors.white, // White border color
-                                  width: 0.5, // Adjust the border width as needed
+                                  width: 0.0, // Adjust the border width as needed
                                 ),
                               ),
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

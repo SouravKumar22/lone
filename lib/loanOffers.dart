@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/application1.dart';
+import 'package:lone/celebration1.dart';
+import 'package:lone/emi_calculator.dart';
 import 'package:lone/instant_loan.dart';
+import 'package:lone/instant_loan2.dart';
 import 'package:lone/loan_accounts2.dart';
 import 'package:lone/profile.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
+import 'cibil2.dart';
 import 'loan_accounts.dart';
 
 class LoanOffers extends StatefulWidget{
@@ -120,7 +125,9 @@ class _LoanOffersState extends State<LoanOffers> {
                           ),),
                         ),
                       ),
+                      SizedBox(height: 20,),
                       Container(
+                        width: MediaQuery.of(context).size.width,
                           margin: EdgeInsets.only(left:15,right: 15),
                           decoration: const BoxDecoration(
                             color: Colors.white,
@@ -233,20 +240,25 @@ class _LoanOffersState extends State<LoanOffers> {
                             onPressed: (){
                             },
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF0076CE)),
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0), // Adjust the radius as needed
+                                  borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
                                 ),
                               ),),
                             child:  Row(mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Center(
-                                  child: Container(
-                                    height: 30,
-                                      child: Image.asset("assets/emiHand.png",)),
+                                  child: GestureDetector(
+                                    onTap:(){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Emi_Calculator()));
+                                    },
+                                    child: Container(
+                                      height: 30,
+                                        child: Image.asset("assets/emiHand.png",)),
+                                  ),
                                 ),
-                                Text('   EMI Calculator ',style: TextStyle(fontSize: 16.0,color: Color(0xFF001FA1) ),),
+                                Text('   EMI Calculator ',style: TextStyle(fontSize: 20.0,color: Colors.white ),),
                               ],
                             )),
                       ),
@@ -258,15 +270,16 @@ class _LoanOffersState extends State<LoanOffers> {
                         padding: const EdgeInsets.all(10.0),
                         child: ElevatedButton(
                             onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Celebration1()));
                             },
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF0076CE)),
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
                                 ),
                               ),),
-                            child:  Text('Consolidate Now',style: TextStyle(fontSize: 16.0,color: Color(0xFF001FA1) ),)),
+                            child:  Text('Consolidate Now',style: TextStyle(fontSize: 20.0,color: Colors.white ),)),
                       ),
                     ],
                   ),
@@ -275,28 +288,7 @@ class _LoanOffersState extends State<LoanOffers> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'HOME',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.clean_hands_outlined),
-            label: 'MY LOANS',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.speed_outlined),
-            label: 'CIBIL SCORE',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        backgroundColor: Color(0xFF1E2331), // Background color of the navigation bar
-        selectedItemColor: Colors.white, // Item color when selected
-        unselectedItemColor: Colors.white.withOpacity(0.6), // Item color when unselected
-
-      ),
+      bottomNavigationBar: bottomBar(context, 0),
     );
   }
 }

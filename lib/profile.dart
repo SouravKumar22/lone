@@ -310,28 +310,7 @@ class _profileState extends State<profile> {
         ),
       ),
     ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'HOME',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.clean_hands_outlined),
-            label: 'MY LOANS',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.speed_outlined),
-            label: 'CIBIL SCORE',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        backgroundColor: Color(0xFF1E2331), // Background color of the navigation bar
-        selectedItemColor: Colors.white, // Item color when selected
-        unselectedItemColor: Colors.white.withOpacity(0.6), // Item color when unselected
-
-      ),
+      bottomNavigationBar: bottomBar(context,0),
 
     );
   }

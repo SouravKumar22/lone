@@ -4,7 +4,11 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lone/application1.dart';
+import 'package:lone/celebration1.dart';
+import 'package:lone/emi_calculator.dart';
 import 'package:lone/instant_loan.dart';
+import 'package:lone/instant_loan1.dart';
+import 'package:lone/instant_loan2.dart';
 
 import 'otp.dart';
 
@@ -21,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ()=>Navigator.push(context,
             MaterialPageRoute(builder:
                 (context) =>
-                Application1()
+                InstantLoan()
             )
         )
     );

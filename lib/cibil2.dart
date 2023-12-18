@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lone/application1.dart';
+import 'package:lone/emi_calculator.dart';
 import 'package:lone/instant_loan.dart';
 import 'package:lone/loanOffers.dart';
 import 'package:lone/loan_accounts2.dart';
@@ -18,21 +20,6 @@ class _cibil2State extends State<cibil2> {
   double progressValue=802;
   int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
-    // Handle item selection here, e.g., navigate to different screens.
-    // In this example, we just update the selected index.
-
-    setState(() {
-      _selectedIndex=index;
-      if(_selectedIndex ==0){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
-      }else if(_selectedIndex ==1){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>loan_accounts2()));
-      }else if(_selectedIndex ==2){
-        // Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
-      }
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +74,7 @@ class _cibil2State extends State<cibil2> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                  height: 250,
+                  height: 180,
                   width: MediaQuery.of(context).size.width-10,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -112,7 +99,7 @@ class _cibil2State extends State<cibil2> {
                               value: progressValue,
                               cornerStyle: CornerStyle.bothCurve,
                               width: 0.12,
-                              color: Colors.indigo,
+                              color: Color(0xFF0076CE),
                               sizeUnit: GaugeSizeUnit.factor,
                               )
                           ],
@@ -122,15 +109,15 @@ class _cibil2State extends State<cibil2> {
                               angle: 90,
                               widget: Text(
                                   progressValue.toStringAsFixed(0),
-                                  style: TextStyle(fontSize:42,
+                                  style: TextStyle(fontSize:38,
                                       fontFamily:'Cirka',
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF001FA1)),
+                                  color: Color(0xFF0076CE)),
                                   ))
                         ])
                       ]),
                   Positioned(
-                    bottom: 50,
+                    bottom: 30,
                     left: MediaQuery.of(context).size.width/2-40,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +128,7 @@ class _cibil2State extends State<cibil2> {
                             'Good',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Color(0xFF001FA1),
+                              color: Color(0xFF0076CE),
                                fontWeight: FontWeight.bold,
                               //   fontFamily:'Cirka',
                               fontSize: 18
@@ -265,7 +252,7 @@ class _cibil2State extends State<cibil2> {
                              style: TextStyle(
                                  // fontFamily:'Cirka',
                                  fontSize: 14,
-                                 color: Colors.white
+                                 color: Colors.black
                              ),),
                            Icon(Icons.keyboard_arrow_right_outlined,
                              color: Colors.black,)],
@@ -285,6 +272,7 @@ class _cibil2State extends State<cibil2> {
                     //fontWeight: FontWeight.bold,
                   ),),
                 ),
+                SizedBox(height: 70,),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 65,
@@ -292,10 +280,10 @@ class _cibil2State extends State<cibil2> {
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoanOffers()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Application1()));
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF0076CE)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
@@ -303,9 +291,9 @@ class _cibil2State extends State<cibil2> {
                         ),),
                       child:  const Row(mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('APPLY FOR LOAN  ',style: TextStyle(fontSize: 20.0,color: Color(0xFF001FA1) ),),
-                          Icon(Icons.arrow_forward_rounded,size: 20,
-                            color: Color(0xFF001FA1),)
+                          Text('Apply for loan  ',style: TextStyle(
+                            letterSpacing: 1,
+                              fontSize: 20.0,color: Colors.white ),),
                         ],
                       )),
                 ),
@@ -313,44 +301,55 @@ class _cibil2State extends State<cibil2> {
             ),
           )
         ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'HOME',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.clean_hands_outlined),
-            label: 'MY LOANS',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.speed_outlined),
-            label: 'CIBIL SCORE',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        unselectedLabelStyle: TextStyle(
-            fontSize: 14.0,
-            fontWeight: FontWeight.bold,
-            fontFamily:'Cirka',
-            color: Colors.white,
-        ),
-        selectedLabelStyle: TextStyle(
-            fontSize: 14.0,
-            fontWeight: FontWeight.bold,
-            fontFamily:'Cirka',
-            color: Colors.white
-        ),
-        backgroundColor: Color(0xFF1E2331), // Background color of the navigation bar
-        selectedItemColor: Colors.white, // Item color when selected
-        unselectedItemColor: Colors.white.withOpacity(0.6), // Item color when unselected
-
-      ),
+      bottomNavigationBar: bottomBar(context, 0),
     );
   }
 }
+BottomNavigationBar bottomBar(BuildContext context,int _selectedIndex){
+  return BottomNavigationBar(
+    items: <BottomNavigationBarItem>[
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        label: 'HOME',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.clean_hands_outlined),
+        label: 'MY LOANS',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.speed_outlined),
+        label: 'CREDIT SCORE',
+      ),
+    ],
+    currentIndex: _selectedIndex,
+    onTap: (index){
+      _selectedIndex=index;
+      if(_selectedIndex ==0){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
+      }else if(_selectedIndex ==1){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>loan_accounts2()));
+      }else if(_selectedIndex ==2){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>cibil2()));
+      }
+    },
+    unselectedLabelStyle: TextStyle(
+      fontSize: 14.0,
+      fontWeight: FontWeight.bold,
+      fontFamily:'Cirka',
+      color: Colors.white,
+    ),
+    selectedLabelStyle: TextStyle(
+        fontSize: 14.0,
+        fontWeight: FontWeight.bold,
+        fontFamily:'Cirka',
+        color: Colors.white
+    ),
+    backgroundColor: Color(0xFF1E2331), // Background color of the navigation bar
+    selectedItemColor: Colors.white, // Item color when selected
+    unselectedItemColor: Colors.white.withOpacity(0.6), // Item color when unselected
 
+  );
+}
 Widget MyDrawer (BuildContext context){
     return Drawer(
         backgroundColor: Color(0xFF343B44),
@@ -408,7 +407,7 @@ Widget MyDrawer (BuildContext context){
           ),),
           onTap: () {
             // Handle the logout tap action
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Emi_Calculator()));
           },
         ),
         SizedBox(height: 50,),

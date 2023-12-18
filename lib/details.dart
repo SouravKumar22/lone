@@ -15,7 +15,7 @@ class Details extends StatefulWidget {
 class _DetailsState extends State<Details> {
   String selectedValue = 'Mr.';
 
-  List<String> options = ['Mr.', 'Ms.', 'Mrs.'];
+  List<String> options = ['Mr.', 'Miss/Mrs.'];
 
   @override
   Widget build(BuildContext context) {
@@ -146,13 +146,13 @@ class _DetailsState extends State<Details> {
                           },
                           child: Text('Continue',style: TextStyle(
                               fontSize: 20,
-                              color: Colors.black),),
+                              color: Colors.white),),
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
+                            backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
                             side: MaterialStateProperty.all(
                               BorderSide(
                                 color: Colors.white, // White border color
-                                width: 0.5, // Adjust the border width as needed
+                                width: 0.0, // Adjust the border width as needed
                               ),
                             ),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(

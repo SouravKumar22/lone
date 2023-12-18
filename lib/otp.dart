@@ -88,12 +88,12 @@ class _OtpState extends State<Otp> {
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
                           ),),
-                        backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
+                        backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
                       ),
                       child: Text('Get OTP',
                       style: TextStyle(
                         fontSize: 20.0,
-                        color: Colors.black,
+                        color: Colors.white,
 
                       ),),
 

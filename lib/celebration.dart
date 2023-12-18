@@ -41,13 +41,13 @@ class _CelebrationState extends State<Celebration> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: 30,),
+                        SizedBox(height: 100,),
                         Image.asset("assets/logo.png",scale: 2,),
-                        SizedBox(height: 10,),
-                        Padding(
+                        SizedBox(height: 150,),
+                        /*Padding(
                           padding: const EdgeInsets.all(50.0),
                           child: Image.asset("assets/celebration.png",scale: 8,),
-                        ),
+                        ),*/
                         SizedBox(height: 50.0),
                         Text("Welcome to 1Lone - Where Your Finances Unite!",
                           textAlign: TextAlign.center,
@@ -97,16 +97,16 @@ class _CelebrationState extends State<Celebration> {
                             },
                             child: Text('Get Credit Score for FREE!',style: TextStyle(
                                 fontSize: 20,
-                                color: Colors.black,
+                                color: Colors.white,
                                 //fontWeight: FontWeight.bold
                             )
                               ,),
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.white), // Button color
+                              backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
                               side: MaterialStateProperty.all(
                                 BorderSide(
                                   color: Colors.black, // White border color
-                                  width: 0.5, // Adjust the border width as needed
+                                  width: 0.0, // Adjust the border width as needed
                                 ),
                               ),
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

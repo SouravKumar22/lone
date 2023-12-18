@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lone/instant_loan.dart';
 
+import 'cibil2.dart';
+
 class Application2 extends StatefulWidget{
   @override
   State<Application2> createState() => _Application2State();
@@ -265,7 +267,7 @@ class _Application2State extends State<Application2> {
                            );
                          },
                          style: ButtonStyle(
-                           backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFC5D0FF)),
+                           backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF0076CE)),
                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                              RoundedRectangleBorder(
                                borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
@@ -276,9 +278,11 @@ class _Application2State extends State<Application2> {
                              fontSize: 20.0,
                              //fontFamily: 'Cirka',
                              //fontWeight: FontWeight.bold,
-                             color: Color(0xFF001FA1) ),)),
+                             color: Colors.white,
+                         ),
+                         )
+                     ),
                    ),
-
                  ],
                ),
              ),
@@ -286,6 +290,7 @@ class _Application2State extends State<Application2> {
          ),
        ),
      ),
+     bottomNavigationBar: bottomBar(context, 0),
    );
   }
 }

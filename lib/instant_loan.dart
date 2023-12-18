@@ -138,7 +138,7 @@ class _InstantLoanState extends State<InstantLoan> {
                     });
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF0076CE)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0), // Adjust the radius as needed
@@ -146,13 +146,18 @@ class _InstantLoanState extends State<InstantLoan> {
                     ),),
                   child:  const Row(mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Next',style: TextStyle(fontSize: 20.0,
-                          color: Colors.black,),),
-                      Padding(
+                      Text('Next',
+                        style: TextStyle(
+                          letterSpacing: 1,
+                          fontSize: 20.0,
+                          color: Colors.white,
+                        ),
+                      ),
+                      /*Padding(
                         padding: EdgeInsets.only(left: 8.0, top: 5),
                         child: Icon(Icons.arrow_forward_rounded,
-                        color: Colors.black,),
-                      )
+                        color: Colors.white,),
+                      )*/
                     ],
                   )),
               )
@@ -160,7 +165,6 @@ class _InstantLoanState extends State<InstantLoan> {
                   ),
                 ),
               ),
-
             ]),
         ),
       )

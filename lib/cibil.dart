@@ -33,7 +33,7 @@ class _GetCIBILState extends State<GetCIBIL> {
                   padding: const EdgeInsets.all(20.0),
                   child: Image.asset("assets/cibil1.png",scale: 5,),
                 ),*/
-                Text("You are one step away to get your CIBIL Report",
+                Text("You are one step away to get your CREDIT Report",
                   textAlign: TextAlign.center,
                   style:TextStyle(
                     letterSpacing: 0.5,
@@ -75,34 +75,7 @@ class _GetCIBILState extends State<GetCIBIL> {
                     ),
                   ),
                 ),
-
-                Container(
-                  margin: EdgeInsets.only(top: 15,left: 10,right: 10),
-                  width: MediaQuery.of(context).size.width-40,
-                  height: 45,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Celebration()));
-                    },
-                    child: Text('GET NOW',style:TextStyle(
-                      //fontWeight: FontWeight.bold,
-                      // fontFamily:'Cirka',
-                      letterSpacing: 1,
-                      fontSize: 20.0, // Adjust the font size as needed
-                      color: Colors.white, // Adjust the color as needed
-                    ),),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 40.0),
-
+                SizedBox(height: 20.0),
                 Row(mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -140,6 +113,34 @@ class _GetCIBILState extends State<GetCIBIL> {
                       ),),
                   ],
                 ),
+                SizedBox(height: 40.0),
+                Container(
+                  margin: EdgeInsets.only(top: 15,left: 10,right: 10),
+                  width: MediaQuery.of(context).size.width-40,
+                  height: 45,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Celebration()));
+                    },
+                    child: Text('GET NOW',style:TextStyle(
+                      //fontWeight: FontWeight.bold,
+                      // fontFamily:'Cirka',
+                      letterSpacing: 1,
+                      fontSize: 20.0, // Adjust the font size as needed
+                      color: Colors.white, // Adjust the color as needed
+                    ),),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Color(0xFF0076CE)), // Button color
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0), // Adjust the radius as needed
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+
                 /*Container(
                   margin: EdgeInsets.only(top: 40,left: 10,right: 10),
                   width: MediaQuery.of(context).size.width-40,
